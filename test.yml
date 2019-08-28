@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: create file
+      file: path=/user_data state=directory mode="1777"
