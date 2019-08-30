@@ -60,7 +60,7 @@
           "Enter pass phrase": "{{openvpn_pki_pass}}"
       with_items: "{{openvpn_clients}}"
     - name: Save generated keys
-      shell: docker run -v "{{openvpn_data_volume}}:/etc/openvpn" --rm "{{openvpn_docker_image}}" ovpn_getclient {{item}} > ~/{{item}}.ovpn
+      shell: docker run -v "{{openvpn_data_volume}}:/etc/openvpn" --rm "{{openvpn_docker_image}}" ovpn_getclient {{item}} > /root/{{item}}.ovpn
       with_items: "{{openvpn_clients}}"
     # - name: Fetch clients
     #   fetch: src=/root/{{item}}.ovpn  dest=/home/{{user}}/vpn-ca/ flat=yes
